@@ -29,7 +29,7 @@
     
     <!-- Paquete "base" -->
     <package name="default" extends="struts-default" namespace="/">
-        
+
         <interceptors>
             
             <interceptor-stack name="quizProInterceptorStack">
@@ -70,6 +70,10 @@
     
     <!-- paquete para CRUDs -->
     <package name="crud" extends="default" namespace="/">
+
+        <action name="" class="action_{1}">
+            <result>/index.jsp</result>
+        </action>
 
         <action name="formulario_*" class="action_{1}" method="formulario">
             <result name="formulario">/servicios/{1}/formulario.jsp</result>

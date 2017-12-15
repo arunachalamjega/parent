@@ -4,7 +4,6 @@
 --%>
 
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
-
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="c" uri="/WEB-INF/tld/c.tld" %>
 <%@ taglib uri="http://displaytag.sf.net" prefix="display" %>

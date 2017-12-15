@@ -2,7 +2,7 @@
     Author     : Alejandro
     Description: Incluye scripts necesarios para mostrar el editor avanzado de texto.
 --%>
-
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <s:url id="urlTiniMce" value="/scripts/tinymce/jscripts/tiny_mce/tiny_mce.js" />
 <s:url id="urlFckEditor" value="/scripts/fckeditor/fckeditor.js" />
 

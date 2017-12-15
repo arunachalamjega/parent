@@ -79,21 +79,6 @@ public class Initializer  extends SpringBootServletInitializer  implements WebAp
 
 
     @Bean
-    public FilterRegistrationBean filteroAuthetication() {
-        FilterRegistrationBean registration = new FilterRegistrationBean();
-        FiltroAutenticacion filterAuth = new FiltroAutenticacion();
-        registration.setFilter(filterAuth);
-        registration.setName("filtroAutenticacion");
-        List<String> list = new ArrayList<String>();
-        list.add("*.jsp");
-        list.add("*.action");
-        registration.setUrlPatterns(list);
-        registration.setMatchAfter(true);
-        return registration;
-    }
-
-
-    @Bean
     public FilterRegistrationBean pageFilter() {
         FilterRegistrationBean registration = new FilterRegistrationBean();
         PageFilter sitemesh = new PageFilter();
@@ -106,6 +91,7 @@ public class Initializer  extends SpringBootServletInitializer  implements WebAp
 
         return registration;
     }
+
 
 
     @Bean
@@ -122,15 +108,20 @@ public class Initializer  extends SpringBootServletInitializer  implements WebAp
         return registration;
     }
 
-    /*
     @Bean
-    public ServletListenerRegistrationBean<ServletContextListener> myServletListener () {
-        ServletListenerRegistrationBean<ServletContextListener> srb =
-                new ServletListenerRegistrationBean<>();
-        srb.setListener(new ContextLoaderListener());
-        return srb;
+    public FilterRegistrationBean filteroAuthetication() {
+        FilterRegistrationBean registration = new FilterRegistrationBean();
+        FiltroAutenticacion filterAuth = new FiltroAutenticacion();
+        registration.setFilter(filterAuth);
+        registration.setName("filtroAutenticacion");
+        List<String> list = new ArrayList<String>();
+        list.add("*.jsp");
+        list.add("*.action");
+        registration.setUrlPatterns(list);
+        registration.setMatchAfter(true);
+        return registration;
     }
-*/
+
 }
 
 

@@ -2,7 +2,7 @@
     Author     : Alejandro
     Description: Incluye scripts necesarios para mostrar calendarios.
 --%>
-
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <s:url id="urlCalendar1" value="/scripts/calendar/calendar.js" />
 <s:url id="urlCalendar2" value="/scripts/calendar/lang/calendar-es.js" />
 <s:url id="urlCalendar3" value="/scripts/calendar/calendar-setup.js" />

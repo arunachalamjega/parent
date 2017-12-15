@@ -6,6 +6,8 @@
 --%>
 
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+
 <%@ include file="/comun/include.jsp" %>
 
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
