@@ -41,6 +41,8 @@ public class FiltroAutenticacion implements Filter {
 
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
+
+
         String urlSolicitada = ((HttpServletRequest) servletRequest).getRequestURL().toString();
         String webapp = ((HttpServletRequest) servletRequest).getContextPath().toString();
         HttpSession sesion = ((HttpServletRequest) servletRequest).getSession();
@@ -53,9 +55,12 @@ public class FiltroAutenticacion implements Filter {
         if(servletRequest.getCharacterEncoding()==null) {
             servletRequest.setCharacterEncoding("utf-8");
 	}
+
+        log("Coming in1", usuarioSesion, servicioSesion, urlSolicitada);
         
         // obtener url solicitada
         urlSolicitada = urlSolicitada.substring(urlSolicitada.indexOf(webapp) + webapp.length());
+        log("Coming in2", usuarioSesion, servicioSesion, urlSolicitada);
         
         // obtener paquete de la url solicidata
         String paqueteSolicitado;
@@ -64,7 +69,8 @@ public class FiltroAutenticacion implements Filter {
         if(paqueteSolicitado.lastIndexOf("/", paqueteSolicitado.length()) >= 0)
             paqueteSolicitado = paqueteSolicitado.substring(paqueteSolicitado.lastIndexOf("/", paqueteSolicitado.length()));
         
-        if(urlSolicitada.equals(error)) { // si es la página de error, dejar pasar
+        if(urlSolicitada.equals(error)) {
+            log("Coming in3", usuarioSesion, servicioSesion, urlSolicitada);// si es la página de error, dejar pasar
             filterChain.doFilter(servletRequest, servletResponse);
             return;
         }
@@ -80,6 +86,7 @@ public class FiltroAutenticacion implements Filter {
         
         // verificar si ya se seleccionó una convocatoria
         if(sesion.getAttribute(ISesion.CONVOCATORIA) == null) {
+            log("Coming in4", usuarioSesion, servicioSesion, urlSolicitada);
             if(servicioSolicitado != null && servicioSolicitado.getRequiereConvocatoria()) {
                 httpServletResponse.sendRedirect(webapp);
                 return;
