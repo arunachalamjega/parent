@@ -44,7 +44,11 @@ public class FiltroAutenticacion implements Filter {
 
 
         String urlSolicitada = ((HttpServletRequest) servletRequest).getRequestURL().toString();
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, "urlSolicitada"+urlSolicitada);
+
         String webapp = ((HttpServletRequest) servletRequest).getContextPath().toString();
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, "WEBAPP"+webapp);
+
         HttpSession sesion = ((HttpServletRequest) servletRequest).getSession();
         Usuario usuarioSesion = (Usuario) sesion.getAttribute(ISesion.USUARIO_AUTENTICADO);
         Servicio servicioSesion = (Servicio) sesion.getAttribute(ISesion.SERVICIO);

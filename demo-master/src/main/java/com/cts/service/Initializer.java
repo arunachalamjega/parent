@@ -45,7 +45,10 @@ public class Initializer  extends SpringBootServletInitializer  implements WebAp
         ServletRegistrationBean registration = new ServletRegistrationBean(dwr());
         Map<String,String> params = new HashMap<String,String>();
         params.put("debug","true");
+        List<String> list = new ArrayList<String>();
+        list.add("/dwr/*");
         registration.setInitParameters(params);
+        registration.setUrlMappings(list);
         return registration;
     }
 

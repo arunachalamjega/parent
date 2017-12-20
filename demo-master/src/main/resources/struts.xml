@@ -3,7 +3,13 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-    
+
+
+
+
+
+
+
     <!-- Archivos XML a incluir. Agragar acá los nuevos archivos con definición de actions -->
     <include file="ingswii/quizpro/presentacion/servicios/seleccionarConvocatoria/strutsSeleccionarConvocatoria.xml" />
     <include file="ingswii/quizpro/presentacion/servicios/autenticacion/strutsAutenticacion.xml" />
@@ -26,7 +32,7 @@
     <include file="ingswii/quizpro/presentacion/servicios/asignarExamenAConvocatoria/strutsAsignarExamenAConvocatoria.xml" />
     <include file="ingswii/quizpro/presentacion/servicios/publicarResultados/strutsPublicarResultados.xml" />
     <include file="ingswii/quizpro/presentacion/servicios/consultarResultados/strutsConsultarResultados.xml" />
-    
+    <include file="ingswii/quizpro/presentacion/servicios/welcome/strutsWelcome.xml" />
     <!-- Paquete "base" -->
     <package name="default" extends="struts-default" namespace="/">
 
@@ -71,9 +77,7 @@
     <!-- paquete para CRUDs -->
     <package name="crud" extends="default" namespace="/">
 
-        <action name="" class="action_{1}">
-            <result>/index.jsp</result>
-        </action>
+
 
         <action name="formulario_*" class="action_{1}" method="formulario">
             <result name="formulario">/servicios/{1}/formulario.jsp</result>

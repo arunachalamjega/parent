@@ -5,12 +5,14 @@ import ingswii.quizpro.biz.vo.ugs.Menu;
 import ingswii.quizpro.biz.vo.ugs.Servicio;
 import java.util.List;
 import javax.persistence.Query;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Alejandro
  */
 public class DaoServicio extends AbstractDao<Servicio> implements IDaoServicio {
+    Logger lgr =  Logger.getLogger(this.getClass().getName());
 
     public Servicio buscarServicioPorUrlYPublico(String url, Boolean publico) {
         
@@ -27,15 +29,16 @@ public class DaoServicio extends AbstractDao<Servicio> implements IDaoServicio {
     }
 
     public Servicio buscarServicioPorUrl(String url) {
-        
+
+        lgr.info("Coming in "+ url);
         Query query = getEntityManager().createQuery("SELECT s FROM " + Servicio.class.getSimpleName() + " s WHERE s.url = :url");
         query.setParameter("url", url);
         
         List<Servicio> lista = ejecutarSelect(query);
-        
+        lgr.info("Coming in query "+ query);
         if(lista != null && lista.size() > 0)
             return lista.get(0);
-                
+        lgr.info("Coming return   ");
         return null;
     }
 

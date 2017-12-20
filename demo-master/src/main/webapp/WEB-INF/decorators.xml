@@ -5,7 +5,7 @@
     Description: Decoradores sitemesh.
 -->
 
-<decorators defaultdir="/decoradores">
+<decorators defaultdir="/WEB-INF/decorators">
     
     <decorator name="main" page="main.jsp">
         

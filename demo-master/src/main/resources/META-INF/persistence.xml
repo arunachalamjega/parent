@@ -19,7 +19,7 @@
     <properties>
       <property name="javax.persistence.jdbc.user" value="SX6gCU28TLD0IpWP"/>
       <property name="javax.persistence.jdbc.password" value="b4KXaKOhIh7qtCKf"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:63306/cf_54dcecb6_92ce_4645_83e5_6e839fdccb08"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://10.0.16.54:3306/cf_54dcecb6_92ce_4645_83e5_6e839fdccb08"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
     </properties>
   </persistence-unit>
